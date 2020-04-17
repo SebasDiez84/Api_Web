@@ -3,9 +3,11 @@ const { Pool } = require("pg");
 class ServicioPostgres {
   constructor() {
     this.pool = new Pool({
-         "url": "localhost",
-         "nombre": "Api",
-         "descripcion": ""
+      user: "postgres",
+      host: "localhost",
+      database: "apiSimulador",
+      password: "",
+      port: 5432,
         });
 }
 async ejecutarSql(sql) {
